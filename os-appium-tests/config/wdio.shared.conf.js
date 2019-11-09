@@ -33,7 +33,7 @@ exports.config = {
 
     },
     sync: true,
-    logLevel: 'debug',
+    logLevel: 'trace',
     deprecationWarnings: true,
     bail: 0,
     baseUrl: '',
@@ -54,9 +54,9 @@ exports.config = {
     // ====================
     afterTest: function (test) {
         console.log(test);
-        if (!test.passed) {
+        /*if (!test.passed) {
             browser.takeScreenshot();
-        }
+        }*/
     },
 
     beforeSession: (config, capabilities, specs) => {
