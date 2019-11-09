@@ -1,4 +1,4 @@
-import {DEFAULT_TIMEOUT, DEFAULT_TIMEOUT_INTERVAL} from "../constants"
+import {DEFAULT_TIMEOUT, DEFAULT_TIMEOUT_INTERVAL} from '../constants';
 
 export const CONTEXT_REF = {
     NATIVE: 'native',
