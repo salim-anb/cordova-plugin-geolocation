@@ -1,85 +1,79 @@
-import * as Context from '../helpers/Context';
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Context = require("../helpers/Context");
 // APPLICATION DEFAULTS
-
-export function getTitle(): WebdriverIO.Element {
+function getTitle() {
     return Context.getElemBySelector('#b1-Title');
 }
-
-export function getLocationLink(): WebdriverIO.Element {
+exports.getTitle = getTitle;
+function getLocationLink() {
     return Context.getElemBySelector('#getLocationLink');
 }
-
+exports.getLocationLink = getLocationLink;
 // SETUP BUTTONS - Get Location
-
-export function SetupTimeoutAndMaxAgeParameters(): WebdriverIO.Element {
+function SetupTimeoutAndMaxAgeParameters() {
     return Context.getElemBySelector('#btSetTimeoutAndMaxAge');
 }
-
-export function SetupTimeoutPhone(): WebdriverIO.Element {
+exports.SetupTimeoutAndMaxAgeParameters = SetupTimeoutAndMaxAgeParameters;
+function SetupTimeoutPhone() {
     return Context.getElemBySelector('#Name1_changephone');
 }
-
-export function SetupMaxAge(): WebdriverIO.Element {
+exports.SetupTimeoutPhone = SetupTimeoutPhone;
+function SetupMaxAge() {
     return Context.getElemBySelector('#Name1_changeemail');
 }
-
-export function SetupEmptyTimeout(): WebdriverIO.Element {
+exports.SetupMaxAge = SetupMaxAge;
+function SetupEmptyTimeout() {
     return Context.getElemBySelector('#Name1_changephoneandemail');
 }
-
-export function SetupEmptyMaxAge(): WebdriverIO.Element {
+exports.SetupEmptyTimeout = SetupEmptyTimeout;
+function SetupEmptyMaxAge() {
     return Context.getElemBySelector('#Name2_nophone');
 }
-
-export function SetupEnableHighAccuracy(): WebdriverIO.Element {
+exports.SetupEmptyMaxAge = SetupEmptyMaxAge;
+function SetupEnableHighAccuracy() {
     return Context.getElemBySelector('#onlyphone');
 }
-
-export function getLocationBtn(): WebdriverIO.Element {
+exports.SetupEnableHighAccuracy = SetupEnableHighAccuracy;
+function getLocationBtn() {
     return Context.getElemBySelector('#GetLocationBtn');
 }
-
+exports.getLocationBtn = getLocationBtn;
 // Result Cards
-
-export function getSuccessCard(): WebdriverIO.Element {
+function getSuccessCard() {
     return Context.getElemBySelector('#msgSuccessGetLocation');
 }
-
+exports.getSuccessCard = getSuccessCard;
 // TODO?
 /*export function getCloseSuccessCardButton(): WebdriverIO.Element {
     return Context.getElemBySelector('#closeSuccessCard');
 }*/
-
-export function getSuccessDetails(): WebdriverIO.Element {
+function getSuccessDetails() {
     return Context.getElemBySelector('#detailPosition');
 }
-
-export function getFailureCard(): WebdriverIO.Element {
+exports.getSuccessDetails = getSuccessDetails;
+function getFailureCard() {
     return Context.getElemBySelector('#msgErrorGetLocation');
 }
-
+exports.getFailureCard = getFailureCard;
 // msgFailedGetLocation - Failed to obtain location.
-export function getFailureMessage(): WebdriverIO.Element {
+function getFailureMessage() {
     return Context.getElemBySelector('#msgFailedGetLocation');
 }
-
+exports.getFailureMessage = getFailureMessage;
 // TODO?
 /*export function getCloseFailureCardButton(): WebdriverIO.Element {
     return Context.getElemBySelector('#closeFailureCard');
 } */
-
-export function getErrorCode(): WebdriverIO.Element {
+function getErrorCode() {
     return Context.getElemBySelector('#valueFailedCode');
 }
-
-export function getErrorMessage(): WebdriverIO.Element {
+exports.getErrorCode = getErrorCode;
+function getErrorMessage() {
     return Context.getElemBySelector('#valueFailedMsg');
 }
-
-
+exports.getErrorMessage = getErrorMessage;
 // SCREEN NAME
-
-export const SCREENTITLE = {
+exports.SCREENTITLE = {
     LOCATION_SCREEN: 'GET LOCATION',
-  };
+};
