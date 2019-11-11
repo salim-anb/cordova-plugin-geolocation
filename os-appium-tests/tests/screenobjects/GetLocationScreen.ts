@@ -81,5 +81,5 @@ export function getErrorMessage(): WebdriverIO.Element {
 // SCREEN NAME
 
 export const SCREENTITLE = {
-    LOCATION_SCREEN: 'GET LOCATION',
+    LOCATION_SCREEN: 'Get Location',
   };

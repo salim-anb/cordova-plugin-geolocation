@@ -11,7 +11,7 @@ config.capabilities = [
         // The api key that has a reference to the app-project in the TO cloud
         testobject_api_key: 'D9F910DF4B894017B15C2FB7AD25192B',
         // You can find more info in the Appium Basic Setup section
-        platformName: 'iOS',
+        platformName: 'Android',
         platformVersion: '12',
         idleTimeout: 180,
         // testobject_cache_device: true,
@@ -28,6 +28,8 @@ config.capabilities = [
         // tabletOnly: false,
         // testobject_cache_device: true,
         // noReset: true,
+        locationServicesEnabled: true,
+        locationServicesAuthorized: true
     },
 ];
 

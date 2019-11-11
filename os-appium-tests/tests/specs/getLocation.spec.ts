@@ -25,7 +25,7 @@ describe('[TestSuite, Description("Get Location")]', () => {
     };
 
    beforeAll(() => {
-
+        // browser.toggleLocationServices();
         // Wait for webview to load
         Context.waitForWebViewContextLoaded();
 
@@ -53,13 +53,13 @@ describe('[TestSuite, Description("Get Location")]', () => {
         setupTimeouttButton.waitForDisplayed(DEFAULT_TIMEOUT);
         setupTimeouttButton.click();
 
-        // In case an alert message appears to allow permissions to the phone, it clicks ALLOW
-        allowPermissionIfNeeded(true);
-
          // click get Location button
         const locationButton = GetLocationScreen.getLocationBtn();
         locationButton.waitForDisplayed(DEFAULT_TIMEOUT);
         locationButton.click();
+
+        // In case an alert message appears to allow permissions to the phone, it clicks ALLOW
+        allowPermissionIfNeeded(true);
 
         // The expected result is for the contact to be created (message text = true)
         const successCard = GetLocationScreen.getSuccessCard();
@@ -67,7 +67,7 @@ describe('[TestSuite, Description("Get Location")]', () => {
         successCard.scrollIntoView();
 
         const successMessageText = GetLocationScreen.getSuccessCard().getText();
-        expect(successMessageText).toEqual('Contact successfully added.');
+        expect(successMessageText).toEqual('Location obtained successfully');
 
     });
 
