@@ -54,9 +54,9 @@ exports.config = {
     // ====================
     afterTest: function (test) {
         console.log(test);
-        if (!test.passed) {
+        /*if (!test.passed) {
             browser.takeScreenshot();
-        }
+        }*/
     },
 
     beforeSession: (config, capabilities, specs) => {

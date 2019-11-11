@@ -41,12 +41,12 @@ describe('[TestSuite, Description("Get Location")]', () => {
         const setupTimeouttButton = GetLocationScreen.SetupTimeoutAndMaxAgeParameters();
         setupTimeouttButton.waitForDisplayed(constants_1.DEFAULT_TIMEOUT);
         setupTimeouttButton.click();
-        // In case an alert message appears to allow permissions to the phone, it clicks ALLOW
-        allowPermissionIfNeeded(true);
         // click get Location button
         const locationButton = GetLocationScreen.getLocationBtn();
         locationButton.waitForDisplayed(constants_1.DEFAULT_TIMEOUT);
         locationButton.click();
+        // In case an alert message appears to allow permissions to the phone, it clicks ALLOW
+        allowPermissionIfNeeded(true);
         // The expected result is for the contact to be created (message text = true)
         const successCard = GetLocationScreen.getSuccessCard();
         successCard.waitForDisplayed(constants_1.DEFAULT_TIMEOUT);

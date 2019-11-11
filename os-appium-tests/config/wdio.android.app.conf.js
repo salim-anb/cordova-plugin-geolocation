@@ -8,11 +8,18 @@ const { join } = require('path');
 config.capabilities = [
     {
         // The defaults you need to have in your config
+        // automationName: 'UiAutomator2',
+        deviceName: 'Nexus 4', // '8AFY0K90E', // 'Nexus_5_API_28', // '9885f349344534324d', 'Pixel_2_XL_API_28', //
         platformName: 'Android',
-        deviceName: 'Android',
-        appPackage: 'com.outsystems.android', // Path to your app package
-        appActivity: 'com.outsystems.android.SplashScreenActivity', // Path to your activity
-        noReset: true
+        // platformVersion: '10.0',
+        // chromedriver: join(process.cwd(), './chromedriver2.exe'),
+        app: join(process.cwd(), './apps/Location_Sample_App.apk'), // Path to your native app
+        // appPackage: 'com.outsystemsenterprise.LocationSampleApp',
+        // appActivity: 'com.outsystemsenterprise.LocationSampleApp.MainActivity',
+        noReset: true,
+        waitforTimeout: waitforTimeout,
+        commandTimeout: commandTimeout,
+        newCommandTimeout: 30 * 60000
     },
 ];
 
