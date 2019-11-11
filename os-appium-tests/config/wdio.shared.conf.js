@@ -5,7 +5,7 @@ exports.config = {
     // Specs
     // ============
     specs: [
-        './tests/specs/**/*.spec.ts'
+        './tests/specs/**/*.*spec.ts'
     ],
 
     // define specific suites

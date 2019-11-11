@@ -1,5 +1,7 @@
 const { config } = require('./wdio.shared.conf');
 const { join } = require('path');
+const waitforTimeout = 30 * 60000;
+const commandTimeout = 30 * 60000;
 // ============
 // Capabilities
 // ============
@@ -19,7 +21,9 @@ config.capabilities = [
         noReset: true,
         waitforTimeout: waitforTimeout,
         commandTimeout: commandTimeout,
-        newCommandTimeout: 30 * 60000
+        newCommandTimeout: 30 * 60000,
+        locationServicesEnabled: true,
+        locationServicesAuthorized: true    
     },
 ];
 
