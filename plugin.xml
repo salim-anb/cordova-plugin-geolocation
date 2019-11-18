@@ -106,10 +106,6 @@ xmlns:android="http://schemas.android.com/apk/res/android"
         <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
             <string>$LOCATION_WHENINUSE_USAGE_DESCRIPTION</string>
         </config-file>
-        
-        <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
-            <string>$LOCATION_WHENINUSE_USAGE_DESCRIPTION</string>
-        </config-file>
 
         <header-file src="src/ios/CDVLocation.h" />
         <source-file src="src/ios/CDVLocation.m" />
