@@ -37,6 +37,11 @@ function getTitle() {
 }
 exports.getTitle = getTitle;
 // Result Cards
+// listWatches
+function getListWatches() {
+    return Context.getElemBySelector('#listWatches');
+}
+exports.getListWatches = getListWatches;
 function getSuccessCard() {
     return Context.getElemBySelector('#msgSuccessWatchPosition');
 }

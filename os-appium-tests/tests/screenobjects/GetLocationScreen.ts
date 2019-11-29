@@ -33,7 +33,7 @@ export function SetupEmptyMaxAge(): WebdriverIO.Element {
 }
 
 export function SetupEnableHighAccuracy(): WebdriverIO.Element {
-    return Context.getElemBySelector('#onlyphone');
+    return Context.getElemBySelector('#switchEnableHighAccuracy');
 }
 
 export function getLocationBtn(): WebdriverIO.Element {
@@ -46,11 +46,6 @@ export function getSuccessCard(): WebdriverIO.Element {
     return Context.getElemBySelector('#msgSuccessGetLocation');
 }
 
-// TODO?
-/*export function getCloseSuccessCardButton(): WebdriverIO.Element {
-    return Context.getElemBySelector('#closeSuccessCard');
-}*/
-
 export function getSuccessDetails(): WebdriverIO.Element {
     return Context.getElemBySelector('#detailPosition');
 }
@@ -59,15 +54,9 @@ export function getFailureCard(): WebdriverIO.Element {
     return Context.getElemBySelector('#msgErrorGetLocation');
 }
 
-// msgFailedGetLocation - Failed to obtain location.
 export function getFailureMessage(): WebdriverIO.Element {
     return Context.getElemBySelector('#msgFailedGetLocation');
 }
-
-// TODO?
-/*export function getCloseFailureCardButton(): WebdriverIO.Element {
-    return Context.getElemBySelector('#closeFailureCard');
-} */
 
 export function getErrorCode(): WebdriverIO.Element {
     return Context.getElemBySelector('#valueFailedCode');
@@ -76,7 +65,6 @@ export function getErrorCode(): WebdriverIO.Element {
 export function getErrorMessage(): WebdriverIO.Element {
     return Context.getElemBySelector('#valueFailedMsg');
 }
-
 
 // SCREEN NAME
 

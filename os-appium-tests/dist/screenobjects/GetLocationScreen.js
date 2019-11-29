@@ -75,5 +75,5 @@ function getErrorMessage() {
 exports.getErrorMessage = getErrorMessage;
 // SCREEN NAME
 exports.SCREENTITLE = {
-    LOCATION_SCREEN: 'GET LOCATION',
+    LOCATION_SCREEN: 'Get Location',
 };

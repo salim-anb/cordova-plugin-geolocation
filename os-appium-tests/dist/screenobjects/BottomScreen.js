@@ -7,7 +7,7 @@ function getBottomLocationLink() {
 }
 exports.getBottomLocationLink = getBottomLocationLink;
 function getBottomWatchPositionLink() {
-    return Context.getElemBySelector('#b7-bottomGetWatchPositionLink');
+    return Context.getElemBySelector('a[href*=WatchPosition]');
 }
 exports.getBottomWatchPositionLink = getBottomWatchPositionLink;
 function getBottomClearWatchLink() {
@@ -18,3 +18,9 @@ function getBottomPositionLink() {
     return Context.getElemBySelector('#b7-bottomPositionsLink');
 }
 exports.getBottomPositionLink = getBottomPositionLink;
+function chooseBottomLink(actionElement) {
+    if (actionElement === getBottomClearWatchLink()) {
+        return Context.getElemBySelector('#b7-bottomGetLocationLink');
+    }
+}
+exports.chooseBottomLink = chooseBottomLink;

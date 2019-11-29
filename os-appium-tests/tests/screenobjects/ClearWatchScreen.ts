@@ -6,6 +6,12 @@ export function getAddtWatchButton(): WebdriverIO.Element {
     return Context.getElemBySelector('#btnAddWatchPosition');
 }
 
+// SETUP BUTTONS - Clear All Watches
+
+//
+export function clearAllWatchesButton(): WebdriverIO.Element {
+    return Context.getElemBySelector('#clearAllWatchesButton');
+}
 
 // SETUP BUTTONS - Watch Position
 
@@ -42,13 +48,14 @@ export function getTitle(): WebdriverIO.Element {
 
 // Result Cards
 
+// listWatches
+export function getListWatches(): WebdriverIO.Element {
+    return Context.getElemBySelector('#listWatches');
+}
+
 export function getSuccessCard(): WebdriverIO.Element {
     return Context.getElemBySelector('#msgSuccessWatchPosition');
 }
-
-/*export function getCloseSuccessCardButton(): WebdriverIO.Element {
-    return Context.getElemBySelector('#closeSuccessCard');
-}*/
 
 export function getDetailSuccessMessage(): WebdriverIO.Element {
     return Context.getElemBySelector('#detailWatchPosition');
@@ -57,10 +64,6 @@ export function getDetailSuccessMessage(): WebdriverIO.Element {
 export function getFailureCard(): WebdriverIO.Element {
     return Context.getElemBySelector('#msgErrorWatchPosition');
 }
-
-/*export function getCloseFailureCardButton(): WebdriverIO.Element {
-    return Context.getElemBySelector('#closeFailureCard');
-}*/
 
 export function getErrorCode(): WebdriverIO.Element {
     return Context.getElemBySelector('#valueErrorCode');
