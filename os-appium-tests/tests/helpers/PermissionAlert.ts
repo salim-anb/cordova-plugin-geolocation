@@ -9,7 +9,7 @@ const SELECTORS = {
 
     IOS: {
         PERMISSION_DIALOG: '*//XCUIElementTypeAlert',
-        PERMISSION_ALLOW_BUTTON: '*//XCUIElementTypeButton[@name="OK"]',
+        PERMISSION_ALLOW_BUTTON: '*//XCUIElementTypeButton[@name="Allow"]',
         PERMISSION_DENY_BUTTON: '*//XCUIElementTypeButton[@name="Don’t Allow"]'
     },
 };

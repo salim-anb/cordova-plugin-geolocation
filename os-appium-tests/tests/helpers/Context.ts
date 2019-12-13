@@ -4,7 +4,7 @@ export const CONTEXT_REF = {
     NATIVE: 'native',
     WEBVIEW: 'webview',
 };
-const DOCUMENT_READY_STATE = {
+export const DOCUMENT_READY_STATE = {
     COMPLETE: 'complete',
     INTERACTIVE: 'interactive',
     LOADING: 'loading',

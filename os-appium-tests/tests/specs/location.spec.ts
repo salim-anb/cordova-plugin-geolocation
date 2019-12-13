@@ -59,6 +59,7 @@ describe('[TestSuite, Description("Get Location")]', () => {
          // click get Location button
         const locationButton = GetLocationScreen.getLocationBtn();
         locationButton.waitForDisplayed(DEFAULT_TIMEOUT);
+        locationButton.scrollIntoView();
         locationButton.click();
 
         // In case an alert message appears to allow permissions to the phone, it clicks ALLOW

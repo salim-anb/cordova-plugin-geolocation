@@ -66,7 +66,7 @@ describe('[TestSuite, Description("Watch Position")]', () => {
         bottomScreen.click();
         // Position exists in clear watch screen
         waitForScreen(ClearWatchScreen.SCREENTITLE.CLEAR_WATCH_SCREEN);
-        if (ClearWatchScreen.clearAllWatchesButton().isDisplayed()) {
+        if (ClearWatchScreen.getListWatches().isExisting()) {
             ClearWatchScreen.clearAllWatchesButton().click();
         }
 
@@ -128,10 +128,15 @@ describe('[TestSuite, Description("Watch Position")]', () => {
         // locationServicesEnabled: true,
         // locationServicesAuthorized: true
         // GPS on the phone is turned OFF
-        browser.capabilities.locationContextEnabled = false;
+        // browser.capabilities.locationContextEnabled = false;
         // browser.setNetworkConditions() = false;
         if (browser.isAndroid)  {
-        browser.toggleLocationServices();
+          browser.capabilities.locationContextEnabled = false;
+          browser.toggleLocationServices();
+          browser.waitUntil(() => {
+           return browser.capabilities.locationContextEnabled === false;
+        });
+          Context.switchToContext(Context.CONTEXT_REF.WEBVIEW);
         }
 
         // clicks in start watch
@@ -143,12 +148,21 @@ describe('[TestSuite, Description("Watch Position")]', () => {
     // click watch position button
         const watchPositionButton = WatchPositionScreen.getStartWatchButton();
         watchPositionButton.waitForDisplayed(DEFAULT_TIMEOUT);
+        watchPositionButton.scrollIntoView();
         watchPositionButton.click();
 
     // In case an alert message appears to allow permissions to the phone, it clicks ALLOW
         allowPermissionIfNeeded(true);
 
         // an error message will be displayed And it fails to add the watch because location is disabled
+        // The expected result is for the contact to be created (message text = true)
+        const failureCard = WatchPositionScreen.getFailureCard();
+        failureCard.waitForDisplayed(DEFAULT_TIMEOUT);
+        failureCard.scrollIntoView();
+
+        // a failure message will appear
+        const failureMessageText = WatchPositionScreen.getErrorMessage().getText();
+        expect(failureMessageText).toEqual('Watch Position added.');
 
     });
 
