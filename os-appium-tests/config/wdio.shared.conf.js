@@ -33,7 +33,7 @@ exports.config = {
 
     },
     sync: true,
-    logLevel: 'error',
+    logLevel: 'debug',
     deprecationWarnings: true,
     bail: 0,
     baseUrl: '',
@@ -48,6 +48,10 @@ exports.config = {
             }],
         'spec'
     ],
+
+    featureFlags: {
+        specFiltering: true
+    },
 
     // ====================
     // Some hooks

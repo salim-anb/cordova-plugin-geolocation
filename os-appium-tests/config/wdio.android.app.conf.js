@@ -11,9 +11,9 @@ config.capabilities = [
     {
         // The defaults you need to have in your config
         // automationName: 'UiAutomator2',
-        deviceName: 'Nexus', // '8AFY0K90E', // 'Nexus_5_API_28', // '9885f349344534324d', 'Pixel_2_XL_API_28', //
+        deviceName: 'Pixel_2_XL', // '8AFY0K90E', // 'Nexus_5_API_28', // '9885f349344534324d', 'Pixel_2_XL_API_28', //
         platformName: 'Android',
-        // platformVersion: '10.0',
+        platformVersion: '9',
         // chromedriver: join(process.cwd(), './chromedriver2.exe'),
         app: join(process.cwd(), './apps/Location_Sample_App.apk'), // Path to your native app
         // appPackage: 'com.outsystemsenterprise.LocationSampleApp',
@@ -23,7 +23,8 @@ config.capabilities = [
         commandTimeout: commandTimeout,
         newCommandTimeout: 30 * 60000,
         locationServicesEnabled: true,
-        locationServicesAuthorized: true    
+        locationServicesAuthorized: true ,
+        autoGrantPermission : true   
     },
 ];
 

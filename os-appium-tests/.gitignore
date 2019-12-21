@@ -69,3 +69,6 @@ typings/
 
 # dist directory
 dist
+
+# apps directory
+apps

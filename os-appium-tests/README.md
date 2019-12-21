@@ -24,14 +24,18 @@ After the tests run, you can then generate a report with allure:
 `npm run report`
 
 The generated report will be located in the **_allure-report_** folder
+Then open the generated report with:
+`npm run openReport`
 
 
-# AWS Device Farm
+# Sauce Labs Device Service
 
 To run the tests in the device farm follow the steps: 
-1. create a run in aws
-1. upload your application (either _.ipa_ or _.apk_). Hit Next.
-1. upload the test bundle
-    * run the command `npm run bundleAws` and upload the generated `awsTests.zip` file.  
-    * Hit Next.
-1. use the contents of the [/awsAndroid.yml](awsConfiguration.yml) file for the script configuration
+1. upload your application (either _.ipa_ or _.apk_) to saucelabs dashboard.
+2. Change the config files "wdio.saucelabs.android.conf.js" and "wdio.saucelabs.ios.conf.js "
+    a) set the testobject_api_key for each platform - iOS & Android
+    b) set the Android & iOs versions 
+3. using a terminal execute the commands
+    a) `npm run saucelabs-ios` 
+    b) `npm run saucelabs-android`
+

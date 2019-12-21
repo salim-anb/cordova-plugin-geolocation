@@ -7,9 +7,9 @@ const { config } = require('./wdio.shared.conf');
 config.capabilities = [
     {
         // The reference to the app
-        testobject_app_id: '1', //find it at SauceLabs App Dashboard
+        // testobject_app_id: '1', //find it at SauceLabs App Dashboard
         // The api key that has a reference to the app-project in the TO cloud
-        testobject_api_key: '7031A38E6F8741BAA0AA526BB7D78DCE',
+        testobject_api_key: '...',
         // You can find more info in the Appium Basic Setup section
         platformName: 'Android',
         platformVersion: '9', //e.g. 8.1
@@ -20,8 +20,10 @@ config.capabilities = [
         privateDevicesOnly: false, //use Public or Private Cloud
         enableAnimations: false,
         autoAcceptAlerts: true,
+        autoDismissAlerts: true,
         locationServicesEnabled: true,
-        locationServicesAuthorized: true        
+        locationServicesAuthorized: true,
+        gpsEnabled: true       
         // testobject_test_name: '..', // The name of the test for in the cloud
         // deviceName: '...', // e.g. Samsung
         // testobject_cache_device: true,

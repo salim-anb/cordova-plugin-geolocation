@@ -57,19 +57,6 @@ describe('[TestSuite, Description("Watch Position")]', () => {
     });
 
    afterEach(() => {
-        // Clean Watch Positions
-        // list of created watches, in clear watch screen
-        // Choose Bottom Screen
-        BottomScreen.getBottomClearWatchLink().waitForDisplayed(DEFAULT_TIMEOUT);
-        const bottomScreen = BottomScreen.getBottomClearWatchLink();
-        bottomScreen.waitForDisplayed(DEFAULT_TIMEOUT);
-        bottomScreen.click();
-        // Position exists in clear watch screen
-        waitForScreen(ClearWatchScreen.SCREENTITLE.CLEAR_WATCH_SCREEN);
-        if (ClearWatchScreen.getListWatches().isExisting()) {
-            ClearWatchScreen.clearAllWatchesButton().click();
-        }
-
         //  Choose Watch Position Bottom Screen
         BottomScreen.getBottomWatchPositionLink().waitForDisplayed(DEFAULT_TIMEOUT);
         const bottomWatchScreen = BottomScreen.getBottomWatchPositionLink();
@@ -77,7 +64,7 @@ describe('[TestSuite, Description("Watch Position")]', () => {
         bottomWatchScreen.click();
     });
 
-   it('[Test, Description("Add watch"), Priority="P0"]', () => {
+   it('[Test, Description("Add watch"), Priority="P0", ID="LO0008"]', () => {
 
         // Setup of the test
         const setupTimeouttButton = WatchPositionScreen.SetupTimeoutAndMaxAgeParameters();
@@ -121,37 +108,50 @@ describe('[TestSuite, Description("Watch Position")]', () => {
         bottomWatchPositionScreen.waitForDisplayed(DEFAULT_TIMEOUT);
         bottomWatchPositionScreen.click();
 
+         // Clean Watch Positions
+        // list of created watches, in clear watch screen
+        // Choose Bottom Screen
+        BottomScreen.getBottomClearWatchLink().waitForDisplayed(DEFAULT_TIMEOUT);
+        const bottomClearWatchScreen = BottomScreen.getBottomClearWatchLink();
+        bottomClearWatchScreen.waitForDisplayed(DEFAULT_TIMEOUT);
+        bottomClearWatchScreen.click();
+        // Position exists in clear watch screen
+        waitForScreen(ClearWatchScreen.SCREENTITLE.CLEAR_WATCH_SCREEN);
+        if (ClearWatchScreen.getListWatches().isExisting()) {
+                    ClearWatchScreen.clearAllWatchesButton().click();
+        }
+
     });
 
     // WIP
-   it('[Test, Description("Add watch without phone GPS"), Priority="P0"]', () => {
-        // locationServicesEnabled: true,
-        // locationServicesAuthorized: true
-        // GPS on the phone is turned OFF
-        // browser.capabilities.locationContextEnabled = false;
-        // browser.setNetworkConditions() = false;
-        if (browser.isAndroid)  {
-          browser.capabilities.locationContextEnabled = false;
-          browser.toggleLocationServices();
-          browser.waitUntil(() => {
-           return browser.capabilities.locationContextEnabled === false;
-        });
-          Context.switchToContext(Context.CONTEXT_REF.WEBVIEW);
+   it('[Test, Description("Add watch without phone GPS"), Priority="P0", ID="LO0012"]', () => {
+        if (browser.capabilities.locationContextEnabled)  {
+            if (browser.isAndroid) {
+            browser.capabilities.locationContextEnabled = false;
+            browser.toggleLocationServices();
+
+            browser.waitUntil(() => {
+             return browser.capabilities.locationContextEnabled === false;
+          });
+        } else {
+            // browser.setGeoLocation("{'\"io.cloudgrey.the-app\": {\"location\": \"inuse\"'}");
+        }
+          // Context.switchToContext(Context.CONTEXT_REF.WEBVIEW);
         }
 
         // clicks in start watch
-    // Setup of the test
+        // Setup of the test
         const setupTimeouttButton = WatchPositionScreen.SetupTimeoutAndMaxAgeParameters();
         setupTimeouttButton.waitForDisplayed(DEFAULT_TIMEOUT);
         setupTimeouttButton.click();
 
-    // click watch position button
+        // click watch position button
         const watchPositionButton = WatchPositionScreen.getStartWatchButton();
         watchPositionButton.waitForDisplayed(DEFAULT_TIMEOUT);
         watchPositionButton.scrollIntoView();
         watchPositionButton.click();
 
-    // In case an alert message appears to allow permissions to the phone, it clicks ALLOW
+        // In case an alert message appears to allow permissions to the phone, it clicks ALLOW
         allowPermissionIfNeeded(true);
 
         // an error message will be displayed And it fails to add the watch because location is disabled
@@ -162,7 +162,7 @@ describe('[TestSuite, Description("Watch Position")]', () => {
 
         // a failure message will appear
         const failureMessageText = WatchPositionScreen.getErrorMessage().getText();
-        expect(failureMessageText).toEqual('Watch Position added.');
+        expect(failureMessageText).toEqual('Current location settings can not satisfy this request');
 
     });
 

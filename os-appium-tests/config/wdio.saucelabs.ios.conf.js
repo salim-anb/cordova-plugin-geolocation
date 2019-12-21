@@ -7,11 +7,11 @@ const { config } = require('./wdio.shared.conf');
 config.capabilities = [
     {
         // The reference to the app
-        testobject_app_id: '1', // app version id - find it in saucelabs dashboard app versions
+        testobject_app_id: '...', // app version id - find it in saucelabs dashboard app versions
         // The api key that has a reference to the app-project in the TO cloud
-        testobject_api_key: 'D9F910DF4B894017B15C2FB7AD25192B',
+        testobject_api_key: '...',
         // You can find more info in the Appium Basic Setup section
-        platformName: 'Android',
+        platformName: 'iOS',
         platformVersion: '12',
         idleTimeout: 180,
         // testobject_cache_device: true,
@@ -21,6 +21,7 @@ config.capabilities = [
         privateDevicesOnly: false,
         enableAnimations: false,
         autoAcceptAlerts: true,
+        autoDismissAlerts: true,
         // The name of the test for in the cloud
         testobject_test_name: 'location',
         // deviceName: 'iPhone.*',

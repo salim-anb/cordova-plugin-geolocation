@@ -39,7 +39,7 @@ describe('[TestSuite, Description("Get Location")]', () => {
 
     });
 
-   it('[Test, Description("Get location with all parameters"), Priority="P0"]', () => {
+   it('[Test, Description("Get location with all parameters"), Priority="P0", ID="LO0002"]', () => {
         // Enter Home Screen
         HomeScreen.getTitle().waitForDisplayed(DEFAULT_TIMEOUT);
         const homeScreenButton = HomeScreen.getLocationLink();
